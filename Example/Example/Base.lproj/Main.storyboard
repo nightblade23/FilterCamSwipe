@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLx-dy-vUy">
+                                <rect key="frame" x="0.0" y="499" width="375" height="168"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uK-on-P5a">
+                                        <rect key="frame" x="135.5" y="118" width="104" height="30"/>
+                                        <state key="normal" title="Start recording"/>
+                                        <state key="selected" title="Stop recording"/>
+                                        <connections>
+                                            <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJw-Tm-qB4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxQ-ZI-cJ2">
+                                        <rect key="frame" x="157.5" y="68" width="60" height="30"/>
+                                        <state key="normal" title="Torch on"/>
+                                        <state key="selected" title="Torch off"/>
+                                        <connections>
+                                            <action selector="torchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0O8-qw-C9z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYW-bd-z92" userLabel="None">
+                                        <rect key="frame" x="169" y="22" width="37" height="30"/>
+                                        <state key="normal" title="None"/>
+                                        <state key="selected" title="Torch off"/>
+                                        <connections>
+                                            <action selector="removeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCy-sF-udR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5uK-on-P5a" firstAttribute="centerX" secondItem="pLx-dy-vUy" secondAttribute="centerX" id="NSJ-Nu-IrL"/>
+                                    <constraint firstItem="5uK-on-P5a" firstAttribute="top" secondItem="VxQ-ZI-cJ2" secondAttribute="bottom" constant="20" id="R84-um-7yS"/>
+                                    <constraint firstItem="tYW-bd-z92" firstAttribute="centerX" secondItem="VxQ-ZI-cJ2" secondAttribute="centerX" id="VB5-3p-oBV"/>
+                                    <constraint firstItem="VxQ-ZI-cJ2" firstAttribute="centerX" secondItem="pLx-dy-vUy" secondAttribute="centerX" id="VKM-bw-OGv"/>
+                                    <constraint firstItem="5uK-on-P5a" firstAttribute="centerX" secondItem="pLx-dy-vUy" secondAttribute="centerX" id="eA5-I1-RQh"/>
+                                    <constraint firstItem="VxQ-ZI-cJ2" firstAttribute="top" secondItem="tYW-bd-z92" secondAttribute="bottom" constant="16" id="tRG-C1-Zem"/>
+                                    <constraint firstAttribute="bottom" secondItem="5uK-on-P5a" secondAttribute="bottom" constant="20" id="v87-81-ZOJ"/>
+                                    <constraint firstAttribute="height" constant="168" id="z2E-or-THq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pLx-dy-vUy" secondAttribute="bottom" id="61c-J4-m3D"/>
+                            <constraint firstItem="pLx-dy-vUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="69n-P4-Uh2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pLx-dy-vUy" secondAttribute="trailing" id="yPq-is-SkN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="controlPanelView" destination="pLx-dy-vUy" id="CM3-i8-jWJ"/>
+                        <outlet property="recordButton" destination="5uK-on-P5a" id="1Hw-Ry-ixz"/>
+                        <outlet property="torchButton" destination="VxQ-ZI-cJ2" id="BF0-xb-84c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
